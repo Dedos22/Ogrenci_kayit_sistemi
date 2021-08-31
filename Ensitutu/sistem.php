@@ -68,14 +68,10 @@ try{
 
                                                      if($yazisay){
                                                      	foreach ($yazicek as $row) {
-                                                     		
-                                                     	
-
-
                                                      
+                                                  
                                                      ?>
-                                                     
-                                           
+                                              
                                             <tr>
                                                 <td  > <?php echo $row["id"] ;?></td>
                                             

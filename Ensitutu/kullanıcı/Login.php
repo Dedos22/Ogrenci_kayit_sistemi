@@ -76,7 +76,7 @@ table{
             $_SESSION['login'] = true;
             $_SESSION['kadi_adi'] = $kadi;
 			
-            header("Location: adaysayfasi.php");
+            header("Location: adaysayfasi1.php");
         }
         else{
 		

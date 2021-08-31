@@ -30,7 +30,29 @@ input{
 }
 
 </style>
+<body onload="sh()">
+<script>
+function form_kontrol()
+{
+   if(document.getElementById("eposta").value.length == 0)
+        document.getElementById("guncelle").disabled = true;
+    else if(document.getElementById("ceptelefonu").value.length == 0)
+        document.getElementById("guncelle").disabled = true;
+    else if(document.getElementById("ales").value.length == 0)
+        document.getElementById("guncelle").disabled = true;
+	 else if(document.getElementById("yabancidil").value.length == 0)
+        document.getElementById("guncelle").disabled = true;
+    else
+        document.getElementById("guncelle").disabled = false;
+        
+}
+function sh()
+{
+    
+        document.getElementById("guncelle").disabled = true;
 
+}
+</script>	
 
   <div >
   <?php
@@ -43,10 +65,22 @@ include"../ayar.php";
  $sifre= $_SESSION['aday_sifre'];
 ?>   
 <br >
+
+
+
+
+
+
+
+  
+
+
+
+												
 <?php
 
 
-$yorumlar=$db->query("SELECT aday_birim,aday_soyadi,aday_tc FROM adaylar WHERE aday_sifre ='".$sifre."' and aday_adi ='".$adi."' ");
+$yorumlar=$db->query("SELECT * FROM adaylar WHERE aday_sifre ='".$sifre."' and aday_adi ='".$adi."' ");
 $yorumlar->execute();
 $yorum=$yorumlar->fetchALL(PDO::FETCH_ASSOC);
 foreach ($yorum as $row) { ?>
@@ -54,76 +88,39 @@ foreach ($yorum as $row) { ?>
 SOYADI:<?php  echo  $row["aday_soyadi"]; 
 
 ?><br >
+
 BIRIM:<?php  echo  $row["aday_birim"];
 $birim=$row["aday_birim"];
 ?><br >
 
 TC:<?php  echo  $row["aday_tc"];
 $birim=$row["aday_birim"];
-?>
-
+$id=$row["aday_id"];
+?><br ><br />
+</div><br />
+										<p>   <form   action="duzenle.php?id=<?php echo $id; ?>" method="POST" >
+										    <label for="fname">eposta:</label>
+                                            <input type="text" value="<?php  echo  $row["eposta"];?>" name="eposta" id="eposta" onkeyup="form_kontrol()" ><br ><br>
+                                            <label for="lname">cep telefonu:</label>
+                                            <input type="text"  value="<?php  echo  $row["ceptelefonu"];?>"  name="ceptelefonu" id="ceptelefonu" onkeyup="form_kontrol()" ><br><br>
+											 <label for="lname">ales puani:</label>
+                                            <input type="text"  value="<?php  echo  $row["ales_puani"];?>" name="ales" id="ales" onkeyup="form_kontrol()" ><br><br>
+											 <label for="lname">yabanci dil puani:</label>
+                                            <input type="text"  value="<?php  echo  $row["yabanci_dil_puani"];?>" name="yabancidil" id="yabancidil" onkeyup="form_kontrol()" ><br><br>
+										
+											
+                                            <input type="submit" name="guncelle" value="kaydet" id="guncelle">
+  </form>
+                                        
+											
+                                               
+                                
+                                       
 <?php 
 
 }
- ?>
+ ?></p>
+ 
 
-
-</div>
-
-
-
-  
-<p>
-
- <?php
-												    
-                                                     include"../ayar.php";
-                                                     $yazilar=$db->prepare("SELECT *  FROM bilim_dallari  WHERE birim_id ='".$birim."'");
-                                                     $yazilar->execute();
-                                                     $yazicek = $yazilar->fetchALL(PDO::FETCH_ASSOC);
-                                                     $yazisay=$yazilar->rowcount();
-
-                                                     if($yazisay){
-                                                     	foreach ($yazicek as $row) {
-                                                     		
-                                                     	
-
-
-                                                     
-                                                     ?>
-													 <fcrm action="guncelle.php" method="post">
-													
-                                             <label >ANA BILIM DALI:</label> 
-											        
-                                           <select  name="ana_bilim_dali" >
-										   ANA BILIM DALI:
-                                           <option ><?php echo $row["ana_bilim_dali"] ;?></option>
-
-                                           </select>
-                                           <br ><br>
-										    <label >PROGRAM ADI:</label> 
-                                                 <select  name="program_adi" >
-                                           <option value="<?php echo $row["program_adi"] ;?>"><?php echo $row["program_adi"] ;?></option>
-
-                                           </select><br><br>
-										   
-										   
-										    <label for="fname">eposta:</label>
-                                            <input type="text"  name="eposta" ><br ><br>
-                                            <label for="lname">cep telefonu:</label>
-                                            <input type="text"  name="ceptelefonu" ><br><br>
-											 <label for="lname">ales puani:</label>
-                                            <input type="text"  name="ales" ><br><br>
-											 <label for="lname">yabanci dil puani:</label>
-                                            <input type="text"  name="yabancidil" ><br><br>
-                                            <input type="submit" value="GÜNCELLE">
-                                        
-												</form> 
-                                               
-                                
-                                                <?php }} ?></p>
-
-
-<body>
 </body>
 </html>

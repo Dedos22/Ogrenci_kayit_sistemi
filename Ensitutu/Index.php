@@ -1,7 +1,6 @@
 <?php 
 include "ayar.php";
 ?>
-
 <style>
 body {
   margin: 0;
@@ -17,21 +16,11 @@ table{
   top: 200px;
       right: 550px;
 }
-
 </style>
-
-
-
 <form action="Index.php" method="POST">
-
-
-
-
   <table align="center">
-  
   <tr>
       <td width="104" height="43"><h2>LOGIN</h2></td>
-    
     </tr>
     <tr>
       <td width="104" height="43">KullaniciAdi</td>
