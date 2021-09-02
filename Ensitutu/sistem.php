@@ -32,7 +32,7 @@ $kontenjan=$_POST['kontenjan'];
 
 try{
    
-    $kaydet=$db->query("INSERT INTO bilim_dallari (ana_bilim_dali, 	program_adi, kontenjan) VALUES ('".$anabilimdali."','".$programadi."','".$kontenjan."')");
+    $kaydet=$db->query("INSERT INTO bilim_dallari (lisans_programi,ana_bilim_dali, kontenjan) VALUES ('".$anabilimdali."','".$programadi."','".$kontenjan."')");
     echo "veriler eklendi";   
  
     
@@ -75,8 +75,8 @@ try{
                                             <tr>
                                                 <td  > <?php echo $row["id"] ;?></td>
                                             
-                                                  <td  ><?php echo $row["ana_bilim_dali"] ;?></td>
-												   <td ><?php echo $row["program_adi"] ;?></td>
+                                                  <td  ><?php echo $row["lisans_programi"] ;?></td>
+												   <td ><?php echo $row["ana_bilim_dali"] ;?></td>
 												   <td ><?php echo $row["kontenjan"] ;?></td>
                                                    <td>   <a href="duzenle.php?guncelle_id=<?php echo $row["id"] ?>">Duzenle</a>                                              
 												   

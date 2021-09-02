@@ -20,9 +20,9 @@ include"ayar.php";
   <form action="duzenle.php?guncelle_id=<?php echo $yazi_id; ?>" method="POST" >
   
    <label for="fname">Ana Bilim Dali:</label><br>
-  <input type="text" id="anabilimdali" name="anabilimdali" value="<?php echo $yazicek["ana_bilim_dali"] ;?>" ><br>
+  <input type="text" id="anabilimdali" name="anabilimdali" value="<?php echo $yazicek["lisans_programi"] ;?>" ><br>
   <label for="lname">Program Adi:</label><br>
-  <input type="text" id="programadi" name="programadi" value="<?php echo $yazicek["program_adi"] ;?>"  ><br><br>
+  <input type="text" id="programadi" name="programadi" value="<?php echo $yazicek["ana_bilim_dali"] ;?>"  ><br><br>
    <label for="lname">Kontenjan:</label><br>
   <input type="text" id="kontenjan" name="kontenjan" value="<?php echo $yazicek["kontenjan"] ;?>" ><br><br>
   
@@ -46,7 +46,7 @@ if(isset($_POST["guncelle"])){
 		
 		
 		
-			$yukle = $db->prepare("UPDATE bilim_dallari SET ana_bilim_dali=?,  program_adi=? , kontenjan=?  WHERE id=?");
+			$yukle = $db->prepare("UPDATE bilim_dallari SET lisans_programi=?, ana_bilim_dali=? , kontenjan=?  WHERE id=?");
             $update = $yukle->execute(array($abd, $pa, $kontenjan,
 				$id));
 			if($update){

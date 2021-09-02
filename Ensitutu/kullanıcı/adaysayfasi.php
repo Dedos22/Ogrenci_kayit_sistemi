@@ -34,14 +34,9 @@ input{
 <script>
 function form_kontrol()
 {
-   if(document.getElementById("eposta").value.length == 0)
+   if(document.getElementById("eposta").value.length == 0 & document.getElementById("ceptelefonu").value.length == 0 & document.getElementById("ales").value.length == 0 & document.getElementById("yabancidil").value.length == 0 )
         document.getElementById("guncelle").disabled = true;
-    else if(document.getElementById("ceptelefonu").value.length == 0)
-        document.getElementById("guncelle").disabled = true;
-    else if(document.getElementById("ales").value.length == 0)
-        document.getElementById("guncelle").disabled = true;
-	 else if(document.getElementById("yabancidil").value.length == 0)
-        document.getElementById("guncelle").disabled = true;
+  
     else
         document.getElementById("guncelle").disabled = false;
         
@@ -96,6 +91,8 @@ $birim=$row["aday_birim"];
 TC:<?php  echo  $row["aday_tc"];
 $birim=$row["aday_birim"];
 $id=$row["aday_id"];
+
+
 ?><br ><br />
 </div><br />
 										<p>   <form   action="duzenle.php?id=<?php echo $id; ?>" method="POST" >

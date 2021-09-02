@@ -56,7 +56,7 @@ table{
 <?php
     ob_start();
     session_start();
-
+include "..\ayar.php";
    
      
     $kadi = $_POST['kadi'];
@@ -75,8 +75,33 @@ table{
         {
             $_SESSION['login'] = true;
             $_SESSION['kadi_adi'] = $kadi;
-			
-            header("Location: adaysayfasi1.php");
+															
+
+
+
+               $yorumlar=$db->query("SELECT kayit_durumu FROM adaylar WHERE aday_sifre ='".$sifre."' and aday_adi ='".$kadi."' ");
+               $yorumlar->execute();
+               $yorum=$yorumlar->fetchALL(PDO::FETCH_ASSOC);
+               foreach ($yorum as $row) { 
+			    $kayit_durumu=$row["kayit_durumu"];
+				     if($kayit_durumu==0){
+				           header("Location: adaysayfasi1.php");
+				      }else if($kayit_durumu==1){
+				          header("Location: adaysayfasi.php");
+				       }else{
+					        header("Location: adaysayfasi1.php");
+					   
+					   }
+				
+			   }
+
+
+
+
+
+
+
+            
         }
         else{
 		

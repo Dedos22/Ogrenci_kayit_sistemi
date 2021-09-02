@@ -12,13 +12,13 @@ $id = $_GET["id"];
 if(isset($_POST["guncelle"])){
 
 
-echo	 $abd= $_POST['ana_bilim_dali'];
-     
+ $abd= $_POST['ana_bilim_dali'];
+ $kayit_durumu="1";    
 
      
 	
-			$yukle = $db->prepare("UPDATE adaylar SET program_adi=?  WHERE aday_id=?");
-            $update = $yukle->execute(array($abd, 
+			$yukle = $db->prepare("UPDATE adaylar SET program_adi=? ,kayit_durumu=?   WHERE aday_id=?");
+            $update = $yukle->execute(array($abd, $kayit_durumu, 
 				$id));
 			if($update){
 				header("Location: adaysayfasi.php");

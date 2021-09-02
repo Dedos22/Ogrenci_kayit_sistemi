@@ -62,7 +62,7 @@ $yorumlar=$db->query("SELECT Birim FROM Kullanicilar WHERE Kullanici_Sifre ='".$
 $yorumlar->execute();
 $yorum=$yorumlar->fetchALL(PDO::FETCH_ASSOC);
 foreach ($yorum as $row) { ?>
-<b><p>BIRIM:<p><?php  echo  $row["Birim"]; 
+<b><p><p><?php  
 $birim=$row["Birim"];
 ?></b>
 
@@ -74,7 +74,7 @@ $birim=$row["Birim"];
   <li><a class="active" href="admin.php?fg=1">Sistem</a></li>
     <li><a class="active" href="admin.php?fg=2">Basvuru Listesi</a></li>
 
-<li><a class="active" href="admin.php?fg=3">Aday Basvuru </a></li>
+
 <li><a class="active" href="admin.php?fg=4">Tamamlanmayan Başvurular </a></li>
  <li><?php
 if ($_SESSION['Kullanici_Adi']==""){
@@ -108,21 +108,17 @@ echo "<br><a href=logout.php>LOGOUT</a>";
   <?PHP
   if($_GET["fg"]==1)
   {  ?>
-     <iframe src="sistem.php" style=" height:500; width:1100" title="sistem_sayfasi"></iframe>
+     <iframe src="sistem.php" style=" height:1000; width:1220" title="sistem_sayfasi"></iframe>
 	 <?PHP
   }
    else if($_GET["fg"]==2)
   {  ?>
-     <iframe src="basvuru_listesi.php" style=" height:500; width:1100" title="basvuru_sayfasi"></iframe>
-	 <?PHP
-  } else if($_GET["fg"]==3)
-  {  ?>
-     <iframe src="aday_basvurusu.php" style=" height:500; width:1100" title="aday_basvuru_sayfasi"></iframe>
+     <iframe src="basvuru_listesi.php" style=" height:1000; width:1220" title="basvuru_sayfasi"></iframe>
 	 <?PHP
   }
   else if($_GET["fg"]==4)
   {  ?>
-     <iframe src="tamamlanmayan_basvurular.php" style=" height:500; width:1100" title="tamamlanmayan_başvurular"></iframe>
+     <iframe src="tamamlanmayan_basvurular.php" style=" height:1000; width:1220" title="tamamlanmayan_başvurular"></iframe>
 	 <?PHP
   }
   

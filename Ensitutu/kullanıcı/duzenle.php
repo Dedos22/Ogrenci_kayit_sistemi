@@ -16,10 +16,10 @@ if(isset($_POST["guncelle"])){
 	   $cep = $_POST['ceptelefonu'];
 	    $ales = $_POST['ales'];
 		 $yabancidil = $_POST['yabancidil'];
-     
+      $kayit_durumu="2";  
 	
-			$yukle = $db->prepare("UPDATE adaylar SET ana_bilim_dali=?,  program_adi=? , eposta=?, ceptelefonu=?, yabanci_dil_puani=?,ales_puani=?  WHERE aday_id=?");
-            $update = $yukle->execute(array($abd, $pa, $eposta,$cep, $yabancidil,$ales,
+			$yukle = $db->prepare("UPDATE adaylar SET  eposta=?, ceptelefonu=?, yabanci_dil_puani=?,ales_puani=?, kayit_durumu=?  WHERE aday_id=?");
+            $update = $yukle->execute(array( $eposta,$cep, $yabancidil,$ales,$kayit_durumu,
 				$id));
 			if($update){
 				header("Location: adaysayfasi.php");

@@ -81,7 +81,7 @@ $birim=$row["aday_birim"];
 TC:<?php  echo  $row["aday_tc"];
 echo $birim=$row["aday_birim"];
  $id=$row["aday_id"];
-	
+
 ?>
 
  <br ><br />
@@ -93,7 +93,7 @@ echo $birim=$row["aday_birim"];
 	                                                 <?php
 												    
                                                      include"../ayar.php";
-                                                     $yazilar=$db->prepare("SELECT id,ana_bilim_dali,program_adi FROM bilim_dallari  WHERE birim_id ='".$birim."'");
+                                                     $yazilar=$db->prepare("SELECT id,lisans_programi,ana_bilim_dali FROM bilim_dallari  WHERE birim_id ='".$birim."'");
                                                      $yazilar->execute();
                                                      $yazicek = $yazilar->fetchALL(PDO::FETCH_ASSOC);
                                                      $yazisay=$yazilar->rowcount();
@@ -110,7 +110,7 @@ echo $birim=$row["aday_birim"];
                                            
 										   ANA BILIM DALI:
 										  <?PHP 
-                                          echo  "<option   value='".$row["ana_bilim_dali"]."'> ".$row["program_adi"]."</option>";
+                                          echo  "<option   value='".$row["id"]."'> ".$row["lisans_programi"]." ".$row["ana_bilim_dali"]."</option>";
                                           
 										  ?>
 										  <?php }

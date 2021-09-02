@@ -19,7 +19,7 @@ if(isset($guncelle)){
 		
 		
 		
-			$yukle = $db->prepare("UPDATE bilim_dallari SET ana_bilim_dali=?,  program_adi=? , kontenjan=?  WHERE id=?");
+			$yukle = $db->prepare("UPDATE bilim_dallari SET lisans_programi=?,  ana_bilim_dali=? , kontenjan=?  WHERE id=?");
             $update = $yukle->execute(array($abd, $pa, $kontenjan,
 				$id));
 			if($update){
