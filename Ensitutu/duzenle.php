@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<h2>Güncelle</h2>
+<h2>UPDATE</h2>
 <?php
 $yazi_id=$_GET["guncelle_id"];
 
@@ -19,9 +19,9 @@ include"ayar.php";
 
   <form action="duzenle.php?guncelle_id=<?php echo $yazi_id; ?>" method="POST" >
   
-   <label for="fname">Ana Bilim Dali:</label><br>
+   <label for="fname">Lisans Programi:</label><br>
   <input type="text" id="anabilimdali" name="anabilimdali" value="<?php echo $yazicek["lisans_programi"] ;?>" ><br>
-  <label for="lname">Program Adi:</label><br>
+  <label for="lname">Ana Bilim Dali:</label><br>
   <input type="text" id="programadi" name="programadi" value="<?php echo $yazicek["ana_bilim_dali"] ;?>"  ><br><br>
    <label for="lname">Kontenjan:</label><br>
   <input type="text" id="kontenjan" name="kontenjan" value="<?php echo $yazicek["kontenjan"] ;?>" ><br><br>

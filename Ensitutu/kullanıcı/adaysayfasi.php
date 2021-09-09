@@ -61,16 +61,6 @@ include"../ayar.php";
 ?>   
 <br >
 
-
-
-
-
-
-
-  
-
-
-
 												
 <?php
 
@@ -94,6 +84,13 @@ $id=$row["aday_id"];
 
 
 ?><br ><br />
+<?php 
+$kayitdurumu=$row["kayit_durumu"];
+if($kayitdurumu==2){
+
+echo "Basvurunuz basarili olarak alinmistir.";
+}
+?>
 </div><br />
 										<p>   <form   action="duzenle.php?id=<?php echo $id; ?>" method="POST" >
 										    <label for="fname">eposta:</label>
@@ -116,6 +113,7 @@ $id=$row["aday_id"];
 <?php 
 
 }
+
  ?></p>
  
 

@@ -1,8 +1,31 @@
-<form method="POST">
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+input{
+width:350px;
+
+}
+
+
+</style>
+
+</head>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     
+    </div>
+    <div class="col-sm-4">
+      <img src="resim.jpg" style="width:300px" class="img-circle" alt="Ahi evran üniversitesi">
+	  <h2>KAYIT OL</h2> 
+	  <form method="POST">
+    
 	<input type="text" name="TC" placeholder=" TC Kimlik Numarasi"><br><br>
 	<input type="text" name="adi" placeholder=" Adiniz:"><br><br>
 	<input type="text" name="soyadi" placeholder=" Soyadiniz:"><br><br>
-	<label for="cars">enstitu:</label>
+	<label for="cars">enstitu:</label><br >
 
 <select name="enstitu" id="enstitu">
   <option value="1">Fen Bilimleri Enstitusu</option>
@@ -18,6 +41,31 @@
 	<button name="kontrolEt">Kayit Ol</button><br >
 	<a href="Login.php">Giris Sayfasi için tiklayiniz...</a>
 </form>
+
+    <div class="col-sm-4">
+      
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+     
+    </div>
+    <div class="col-sm-4">
+   
+ 
+
+
+    <div class="col-sm-4">
+      
+    </div>
+  </div>
+</div>
+
+
+
 <?php
 if (isset($_POST["kontrolEt"])) {
 include"../ayar.php";

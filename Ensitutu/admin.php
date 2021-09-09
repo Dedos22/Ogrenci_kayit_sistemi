@@ -95,11 +95,11 @@ echo "<br><a href=logout.php>LOGOUT</a>";
   <h3><?php 
   
   if($row["Birim"]==1){
-      echo "Egitim Fakultesi";
+      echo "Fen Bilimleri Enstitusu";
 	  } else if($row["Birim"]==2){
-	  echo "Fen Edebiyat Fakultesi";
+	  echo "Sağlık Bilimleri Enstitüsü";
 	  }else{
-	   echo "Iktisadi Ve Idari Bilmler Fakultesi";
+	   echo "Sosyal Bilimler Enstitusu";
 	  
 	  }
 

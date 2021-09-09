@@ -5,9 +5,9 @@
 <body>
 
 <form action="sistem.php" method="POST">
-  <label for="fname">Ana Bilim Dali:</label><br>
-  <input type="text" id="anabilimdali" name="anabilimdali" ><br>
-  <label for="lname">Program Adi:</label><br>
+  <label for="fname">Lisans Programi:</label><br>
+  <input type="text" id="anabilimdali" name="anabilimdali" ><br><br>
+  <label for="lname">Ana Bilim Dali:</label><br>
   <input type="text" id="programadi" name="programadi" ><br><br>
    <label for="lname">Kontenjan:</label><br>
   <input type="text" id="kontenjan" name="kontenjan" ><br><br>
@@ -48,10 +48,8 @@ try{
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                
-                                               
-                                                <th>ANA BILIM DALI</th>
-                                                  <th>PROGRAM ADI</th>
+                                                 <th>LISANS PROGRAMI</th>
+                                                  <th>ANA BILIM DALI</th>
                                                 <th>KONTENJAN</th>
                                                 <th>DÜZENLE</th>
                                                  <th>SIL</th>

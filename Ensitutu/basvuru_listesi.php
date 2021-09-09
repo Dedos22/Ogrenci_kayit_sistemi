@@ -16,7 +16,7 @@
                                                 <th>ENSTITU</th>
 												 <th>CEPTELEFONU</th>
 												 <th>EPOSTA</th>
-												 <th>KAYIT DURUMU</th>
+												 
 												 <th>ALES PUANI</th>
 												 <th>YABANCI DIL PUANI</th>
 												 <th>PROGRAM ADI</th>
@@ -48,7 +48,7 @@
 												   <td ><?php echo $row["aday_birim"] ;?></td>
 												   <td ><?php echo $row["ceptelefonu"] ;?></td>
 												   <td ><?php echo $row["eposta"] ;?></td>
-												   <td ><?php echo $row["kayit_durumu"] ;?></td>
+												  
 												   <td ><?php echo $row["ales_puani"] ;?></td>
 												   <td ><?php echo $row["yabanci_dil_puani"] ;?></td>
 												   
